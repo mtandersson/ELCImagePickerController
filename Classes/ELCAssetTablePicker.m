@@ -22,6 +22,8 @@
 	[self.tableView setSeparatorColor:[UIColor clearColor]];
 	[self.tableView setAllowsSelection:NO];
 
+    [self.tableView setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:1.0]];
+    
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     self.elcAssets = tempArray;
     [tempArray release];
@@ -51,7 +53,7 @@
          
          ELCAsset *elcAsset = [[[ELCAsset alloc] initWithAsset:result] autorelease];
          [elcAsset setParent:self];
-         [self.elcAssets addObject:elcAsset];
+         [self.elcAssets insertObject:elcAsset atIndex:0];
      }];    
     NSLog(@"done enumerating photos");
 	
